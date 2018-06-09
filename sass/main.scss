@@ -1,0 +1,353 @@
+// colors
+$bg-color: #001421;
+$logo-color: #000;
+$logo-glow-color: #01cafe;
+$circle-border-color: #04080b;
+$circle-color: radial-gradient(circle, #ffffff 30%, #46fffe);
+$rectangle-color: #0d1724;
+$triangle-border-color: #0b0a0d;
+$triangle-color: lighten(#00dffb, 30%);
+$triangle-inner-color: lighten(#0d1724, 15%);
+$triangle-inner-inner-color: lighten(#77faf5, 23%);
+$circle-b-triangle-color: radial-gradient(circle, #fff 45%, #46fffe);
+$circle-b-triangle-glow-color: #46fffe;
+$road-glow-color: #0098f8;
+
+// sizes
+$reactor-size: 60.2vmin;
+
+// mixins
+@mixin center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+@mixin pseudo($position: absolute, $content: "") {
+    content: $content;
+    position: $position;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background: $bg-color;
+  overflow: hidden;
+}
+
+.reactor{
+  @include center;
+  width: $reactor-size;
+  height: $reactor-size;
+  background: $circle-color;
+  border: 2vmin solid $circle-border-color;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: drop-shadow(0 0 10vmin $logo-glow-color);
+
+  .rectangle-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .rectangle{
+      position: absolute;
+      width: 7.3vmin;
+      height: 9.5vmin;
+      background: $rectangle-color;
+      left: 17.7vmin;
+      top: 1.7vmin;
+      left: 16vmin;
+    }
+
+    .circle-between-rectangle{
+      width: 9vmin;
+      height: 9vmin;
+      background: $circle-b-triangle-color;
+      filter: drop-shadow(0 0 3vmin $circle-b-triangle-glow-color);
+      border-radius: 50%;
+    }
+
+    .rectangle-1{
+      left: 17.65vmin;
+      top: 1.5vmin;
+      transform: rotate(-20deg);
+
+      &:before{
+        @include pseudo;
+        margin-top: 2vmin;
+        margin-left: 7.5vmin;
+        @extend .circle-between-rectangle;
+      }
+
+      &:after{
+        @include pseudo;
+        margin-top: 2vmin;
+        margin-left: -9.5vmin;
+        @extend .circle-between-rectangle;
+      }
+    }
+
+    .rectangle-2{
+      top: 29vmin;
+      left: 2vmin;
+      width: 7.6vmin;
+      height: 11vmin;
+      transform: rotate(80deg);
+
+      &:before{
+        @include pseudo;
+        margin-top: -0.5vmin;
+        margin-left: 7.9vmin;
+        @extend .circle-between-rectangle;
+      }
+
+      &:after{
+        @include pseudo;
+        margin-top: -0.5vmin;
+        margin-left: -9.5vmin;
+        @extend .circle-between-rectangle;
+      }
+    }
+
+    .rectangle-3{
+      top: 43.8vmin;
+      left: 10.8vmin;
+      width: 7.4vmin;
+      height: 11vmin;
+      transform: rotate(39deg);
+
+      &:before{
+        @include pseudo;
+        margin-top: -0.5vmin;
+        margin-left: 7.9vmin;
+        @extend .circle-between-rectangle;
+      }
+    }
+
+    .rectangle-4{
+      top: 43.6vmin;
+      left: 42.8vmin;
+      width: 7.4vmin;
+      height: 11vmin;
+      transform: rotate(-40deg);
+
+      &:before{
+        @include pseudo;
+        margin-top: -0.5vmin;
+        margin-left: 7.9vmin;
+        @extend .circle-between-rectangle;
+      }
+
+      &:after{
+        @include pseudo;
+        margin-top: -0.5vmin;
+        margin-left: -9.5vmin;
+        @extend .circle-between-rectangle;
+      }
+    }
+
+    .rectangle-5{
+      top: 28.5vmin;
+      left: 50.8vmin;
+      width: 7.6vmin;
+      height: 11vmin;
+      transform: rotate(-80deg);
+
+      &:before{
+        @include pseudo;
+        margin-top: -0.5vmin;
+        margin-left: 7.9vmin;
+        @extend .circle-between-rectangle;
+      }
+    }
+
+    .rectangle-6{
+      top: 1.4vmin;
+      left: 34.8vmin;
+      height: 10vmin;
+      transform: rotate(20deg);
+
+      &:before{
+        @include pseudo;
+        margin-top: 2vmin;
+        margin-left: 7.9vmin;
+        @extend .circle-between-rectangle;
+      }
+    }
+  }
+
+  .triangle{
+    position: absolute;
+    top: 9.5vmin;
+    left: -4.5vmin;
+    width: 0;
+    height: 0;
+    border-left: 34.7vmin solid transparent;
+    border-right: 34.7vmin solid transparent;
+    border-top: 60vmin solid $triangle-border-color;
+
+    &:after{
+      @include pseudo;
+      top: -57vmin;
+      left: -29.5vmin;
+      width: 0;
+      height: 0;
+      border-left: 29.6vmin solid transparent;
+      border-right: 29.6vmin solid transparent;
+      border-top: 52vmin solid $triangle-color;
+    }
+
+    .circle{
+      position: absolute;
+      z-index: 2;
+      width: 6vmin;
+      height: 6vmin;
+      border-radius: 50%;
+      background: #1bffff;
+      filter: drop-shadow(0 0 4vmin #1bffff);
+
+      &:nth-child(2){
+        margin-left: 9vmin;
+      }
+      &:nth-child(3){
+        margin-left: 18vmin;
+      }
+      &:nth-child(4){
+        margin-left: 27vmin;
+      }
+    }
+
+    .circle-top-container{
+      position: absolute;
+      top: -56.2vmin;
+      left: -17vmin;
+
+      @extend .circle;
+    }
+
+    .circle-left-container{
+      position: absolute;
+      top: -48vmin;
+      left: -30.5vmin;
+      transform: rotate(60deg);
+      @extend .circle;
+    }
+
+    .circle-right-container{
+      position: absolute;
+      top: -24vmin;
+      left: -16vmin;
+      transform: rotate(-60deg);
+      @extend .circle;
+    }
+
+    .rod{
+      position: absolute;
+      z-index: 2;
+      top: -50vmin;
+      width: 20vmin;
+      height: 2vmin;
+      background: $triangle-inner-color;
+      filter: drop-shadow(0 0 2vmin $road-glow-color);
+
+      &:before{
+        @include pseudo;
+        left: 5vmin;
+        top: -0.5vmin;
+        width: 4vmin;
+        height: 3.1vmin;
+        border-radius: 0.5vmin;
+        background: $triangle-inner-color;
+      }
+    }
+
+    .rod-1{
+      margin-top: -2.5vmin;
+      left: -30vmin;
+      transform: rotate(30deg);
+    }
+
+    .rod-2{
+      margin-top: -1.8vmin;
+      margin-left: 10vmin;
+      transform: rotate(150deg);
+    }
+
+    .rod-3{
+      margin-top: 32.8vmin;
+      margin-left: -9.6vmin;
+      transform: rotate(-90deg);
+    }
+
+    .triangle-inner{
+      position: absolute;
+      z-index: 2;
+      top: -49.5vmin;
+      left: -17vmin;
+      width: 0;
+      height: 0;
+      border-left: 17.5vmin solid transparent;
+      border-right: 17.5vmin solid transparent;
+      border-top: 28vmin solid $triangle-inner-color;
+
+      .triangle-inner-inner{
+        position: absolute;
+        top: -23.7vmin;
+        left: -10vmin;
+        width: 0;
+        height: 0;
+        border-left: 10vmin solid transparent;
+        border-right: 10vmin solid transparent;
+        border-top: 16.5vmin solid $triangle-inner-inner-color;
+
+        &:before{
+          @include pseudo;
+          top: -16.8vmin;
+          left: -6vmin;
+          width: 11.2vmin;
+          height: 1.5vmin;
+          background: $triangle-inner-color;
+        }
+
+        &:after{
+          @include pseudo;
+          top: -14vmin;
+          left: -5.5vmin;
+          width: 0;
+          height: 0;
+          border-left: 5.5vmin solid transparent;
+          border-right: 5.5vmin solid transparent;
+          border-top: 9vmin solid #fffefc;
+          filter: drop-shadow(0 0 3vmin #fff);
+        }
+
+        .rectangle{
+          position: absolute;
+          top: -9.2vmin;
+          left: -10.2vmin;
+          width: 11.2vmin;
+          height: 1.5vmin;
+          background: $triangle-inner-color;
+          transform: rotate(58deg);
+
+          &:before{
+            @include pseudo;
+            top: -7.5vmin;
+            left: 5.5vmin;
+            width: 10vmin;
+            height: 1.5vmin;
+            background: $triangle-inner-color;
+            transform: rotate(63deg);
+          }
+        }
+      }
+    }
+  }
+}
