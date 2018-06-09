@@ -59,11 +59,8 @@ body{
     .rectangle{
       position: absolute;
       width: 7.3vmin;
-      height: 9.5vmin;
+      height: 12vmin;
       background: $rectangle-color;
-      left: 17.7vmin;
-      top: 1.7vmin;
-      left: 16vmin;
     }
 
     .circle-between-rectangle{
@@ -76,7 +73,7 @@ body{
 
     .rectangle-1{
       left: 17.65vmin;
-      top: 1.5vmin;
+      top: 1vmin;
       transform: rotate(-20deg);
 
       &:before{
@@ -95,10 +92,10 @@ body{
     }
 
     .rectangle-2{
-      top: 29vmin;
-      left: 2vmin;
+      top: 26.5vmin;
+      left: 0vmin;
       width: 7.6vmin;
-      height: 11vmin;
+      height: 16vmin;
       transform: rotate(80deg);
 
       &:before{
@@ -117,10 +114,10 @@ body{
     }
 
     .rectangle-3{
-      top: 43.8vmin;
-      left: 10.8vmin;
+      top: 43vmin;
+      left: 10vmin;
       width: 7.4vmin;
-      height: 11vmin;
+      height: 12vmin;
       transform: rotate(39deg);
 
       &:before{
@@ -154,10 +151,10 @@ body{
     }
 
     .rectangle-5{
-      top: 28.5vmin;
-      left: 50.8vmin;
+      top: 27vmin;
+      left: 51vmin;
       width: 7.6vmin;
-      height: 11vmin;
+      height: 14vmin;
       transform: rotate(-80deg);
 
       &:before{
@@ -169,9 +166,9 @@ body{
     }
 
     .rectangle-6{
-      top: 1.4vmin;
+      top: 0.6vmin;
       left: 34.8vmin;
-      height: 10vmin;
+      height: 12vmin;
       transform: rotate(20deg);
 
       &:before{
@@ -328,7 +325,7 @@ body{
           filter: drop-shadow(0 0 3vmin #fff);
         }
 
-        .rectangle{
+        .rectangle-glow{
           position: absolute;
           top: -9.2vmin;
           left: -10.2vmin;
